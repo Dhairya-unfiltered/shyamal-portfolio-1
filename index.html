@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F7F3ED">
+  <meta name="description" content="Dr. Shyamal Shah is a Consultant Urologist in Ahmedabad, Gujarat. Qualifications, areas of expertise and contact details.">
+  <meta property="og:title" content="Dr. Shyamal Shah | Consultant Urologist, Ahmedabad">
+  <meta property="og:description" content="Consultant Urologist in Ahmedabad, Gujarat.">
+  <meta property="og:type" content="website">
+  <title>Dr. Shyamal Shah | Consultant Urologist, Ahmedabad</title>
+  <style>
+    /* ---------- Fonts (self-hosted, subsetted) ---------- */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("assets/fonts/fraunces.woff2") format("woff2");
+      font-weight: 300 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Manrope";
+      src: url("assets/fonts/manrope.woff2") format("woff2");
+      font-weight: 400 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ---------- Tokens ---------- */
+    :root {
+      --bg: #F7F3ED;
+      --bg-soft: #EEE5DA;
+      --paper: #FFFDF9;
+      --ink: #202D39;
+      --muted: #596169;
+      --accent: #A65F45;
+      --accent-deep: #8F4B33;
+      --line: #D9CFC1;
+      --line-strong: #C9BDAD;
+
+      --serif: "Fraunces", Georgia, "Times New Roman", serif;
+      --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+      /* Type scale: five sizes */
+      --t-s: 0.875rem;
+      --t-b: 1.0625rem;
+      --t-m: 1.375rem;
+      --t-l: clamp(2rem, 5.5vw, 3rem);
+      --t-xl: clamp(2.5rem, 11vw, 5rem);
+
+      --gutter: clamp(20px, 5vw, 48px);
+      --header-h: 56px;
+      --section-y: clamp(64px, 10vw, 128px);
+    }
+    @media (min-width: 640px) { :root { --header-h: 68px; } }
+
+    /* ---------- Base ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-padding-top: var(--header-h); -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 400 var(--t-b)/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, p, ul { margin: 0; padding: 0; }
+    ul { list-style: none; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 3px; }
+
+    .wrap { width: min(1120px, 100% - 2 * var(--gutter)); margin-inline: auto; }
+    .skip {
+      position: absolute; left: var(--gutter); top: -60px; z-index: 30;
+      background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 3px;
+      font-size: var(--t-s); font-weight: 600;
+    }
+    .skip:focus { top: 8px; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 350;
+      font-optical-sizing: auto;
+      font-variant-numeric: lining-nums;
+      text-wrap: balance;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky; top: 0; z-index: 20;
+      background: var(--bg);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s ease;
+    }
+    .site-header.is-scrolled { border-bottom-color: var(--line); }
+    .site-header .wrap {
+      height: var(--header-h);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .wordmark { display: none; font: 350 1.125rem/1 var(--serif); letter-spacing: -.01em; }
+    .site-nav ul { display: flex; gap: clamp(20px, 7vw, 32px); }
+    .site-nav a {
+      font-size: 0.9375rem; line-height: 1;
+      display: inline-flex; align-items: center; min-height: 44px;
+      background: linear-gradient(var(--accent), var(--accent)) left bottom 11px / 0 1px no-repeat;
+      transition: background-size .25s ease, color .2s ease;
+    }
+    .site-nav a:hover { color: var(--accent-deep); background-size: 100% 1px; }
+    @media (min-width: 640px) {
+      .site-header .wrap { justify-content: space-between; }
+      .wordmark { display: block; }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: clamp(20px, 4vw, 40px) 0 clamp(56px, 9vw, 112px); text-align: center; }
+    .hero-inner { animation: arrive .8s ease both; }
+    @keyframes arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .hero-inner { animation: none; } }
+
+    .portrait {
+      width: clamp(200px, 56vw, 280px);
+      aspect-ratio: 4 / 5;
+      margin: 0 auto;
+      background: var(--bg-soft);
+      border-radius: 3px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .portrait img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: 50% 10%;
+      mix-blend-mode: multiply; /* white photo backdrop takes the plate colour */
+    }
+    .hero h1 { font-size: var(--t-xl); line-height: 1.05; letter-spacing: -.025em; margin-top: clamp(24px, 4vw, 36px); }
+    .hero .role { font: 350 var(--t-m)/1.3 var(--serif); margin-top: 12px; }
+    .hero .degrees { font-size: var(--t-s); color: var(--muted); line-height: 1.6; margin: 8px auto 0; max-width: 30rem; text-wrap: balance; }
+    .hero .degrees span { white-space: nowrap; }
+    .hero .intro { max-width: 34rem; margin: clamp(18px, 3vw, 24px) auto 0; text-wrap: balance; }
+    .actions { display: flex; justify-content: center; gap: 10px; margin-top: clamp(24px, 4vw, 32px); }
+    .btn {
+      flex: 1 1 0; max-width: 11.5rem;
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0 1rem;
+      border: 1px solid transparent; border-radius: 3px;
+      font: 600 0.9375rem/1 var(--sans); white-space: nowrap;
+      transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .btn-primary { background: var(--accent); color: var(--paper); }
+    .btn-primary:hover { background: var(--accent-deep); }
+    .btn-quiet { border-color: var(--ink); color: var(--ink); }
+    .btn-quiet:hover { border-color: var(--accent-deep); color: var(--accent-deep); }
+    .hero .place { margin-top: clamp(20px, 3vw, 28px); font-size: var(--t-s); color: var(--muted); }
+
+    /* ---------- Sections ---------- */
+    .band { padding: var(--section-y) 0; }
+    .band-soft { background: var(--bg-soft); }
+    #contact { padding-bottom: clamp(24px, 4vw, 40px); }
+    .split { display: grid; gap: clamp(32px, 6vw, 48px); }
+    @media (min-width: 900px) { .split { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 64px; } }
+    h2 { font-size: var(--t-l); line-height: 1.1; letter-spacing: -.02em; }
+
+    /* Expertise */
+    .index { display: grid; column-gap: 40px; }
+    @media (min-width: 640px) { .index { grid-template-columns: 1fr 1fr; } }
+    .index li { border-top: 1px solid var(--line-strong); padding: 16px 0 20px; }
+    .index h3 { font-size: var(--t-m); line-height: 1.25; }
+    .index p { font-size: var(--t-s); color: var(--muted); margin-top: 4px; line-height: 1.55; }
+    @media (min-width: 640px) {
+      .index li { padding: 20px 0 28px; }
+      .index p { margin-top: 6px; max-width: 30ch; }
+    }
+
+    /* Qualifications */
+    .group + .group { margin-top: clamp(36px, 5vw, 48px); }
+    .group-title { font: 600 var(--t-s)/1 var(--sans); color: var(--muted); margin-bottom: 16px; }
+    .rows { border-bottom: 1px solid var(--line); }
+    .row {
+      display: grid; grid-template-columns: 5.75rem minmax(0, 1fr); column-gap: 16px; row-gap: 2px;
+      padding: 14px 0; border-top: 1px solid var(--line); align-items: baseline;
+    }
+    .row-when { grid-column: 1; font-size: 0.8125rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .row-what { grid-column: 2; font: 350 var(--t-m)/1.3 var(--serif); font-variant-numeric: lining-nums; }
+    .row-where { grid-column: 2; font-size: var(--t-s); color: var(--muted); }
+    .row-text { grid-column: 2; font-size: var(--t-b); line-height: 1.55; }
+    @media (max-width: 639px) {
+      .row-note { grid-template-columns: 1fr; }
+      .row-note .row-when, .row-note .row-text { grid-column: 1; }
+    }
+    @media (min-width: 640px) {
+      .row { grid-template-columns: 7rem minmax(0, 1fr) minmax(0, 1fr); column-gap: 24px; padding: 18px 0; }
+      .row-when { font-size: var(--t-s); }
+      .row-where { grid-column: 3; font-size: 0.9375rem; }
+      .row-text { grid-column: 2 / 4; }
+    }
+
+    /* Contact */
+    .contact-lead { color: var(--muted); margin-top: 16px; max-width: 24rem; }
+    .contact-list { border-bottom: 1px solid var(--line-strong); }
+    .contact-row {
+      display: grid; gap: 2px; padding: 18px 0; min-height: 72px; align-content: center;
+      border-top: 1px solid var(--line-strong);
+    }
+    .contact-row .label { font-size: var(--t-s); color: var(--muted); }
+    .contact-row .value { font: 350 var(--t-m)/1.3 var(--serif); font-variant-numeric: lining-nums; overflow-wrap: anywhere; transition: color .2s ease; }
+    a.contact-row:hover .value { color: var(--accent-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px; }
+    @media (min-width: 640px) {
+      .contact-row { grid-template-columns: 7rem 1fr; column-gap: 24px; align-items: baseline; }
+    }
+
+    .footer {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      margin-top: clamp(40px, 7vw, 80px); font-size: var(--t-s); color: var(--muted);
+    }
+    .footer a { display: inline-flex; align-items: center; min-height: 44px; }
+    .footer a:hover { color: var(--accent-deep); }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="#top">Dr. Shyamal Shah</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#qualifications">Qualifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-label="Introduction">
+      <div class="wrap hero-inner">
+        <div class="portrait">
+          <img src="assets/dr-shyamal-shah.jpg" width="404" height="531" alt="Portrait of Dr. Shyamal Shah" fetchpriority="high">
+        </div>
+        <h1>Dr. Shyamal Shah</h1>
+        <p class="role">Consultant Urologist</p>
+        <p class="degrees"><span>MBBS,</span> <span>MS (General Surgery),</span> <span>MCh (Urology),</span> <span>DrNB (Urology),</span> <span>MRCS (Glasgow)</span></p>
+        <p class="intro">Endourology, minimally invasive and reconstructive urology, with an emphasis on clear communication and individual care.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Get in touch</a>
+          <a class="btn btn-quiet" target="_blank" rel="noopener noreferrer" href="https://wa.me/919558498020?text=Hi%2C%20I%20found%20your%20number%20on%20your%20website.%20I%20would%20like%20to%20get%20in%20touch.">WhatsApp</a>
+        </div>
+        <p class="place">Ahmedabad, Gujarat, India</p>
+      </div>
+    </section>
+
+    <section class="band band-soft" id="expertise">
+      <div class="wrap split">
+        <h2>Areas of expertise</h2>
+        <ul class="index">
+          <li><h3>Endourology</h3><p>Minimally invasive, scope-based treatment of the urinary tract</p></li>
+          <li><h3>Uro-oncology</h3><p>Cancers of the urinary and male reproductive systems</p></li>
+          <li><h3>Andrology</h3><p>Male reproductive and sexual health</p></li>
+          <li><h3>Urogynecology</h3><p>Female pelvic floor and bladder conditions</p></li>
+          <li><h3>Renal transplantation</h3><p>Kidney transplant surgery</p></li>
+          <li><h3>Reconstructive urology</h3><p>Repair and reconstruction of the urinary tract</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="band" id="qualifications">
+      <div class="wrap split">
+        <h2>Qualifications and experience</h2>
+        <div>
+          <div class="group">
+            <h3 class="group-title">Experience</h3>
+            <ul class="rows">
+              <li class="row"><span class="row-when">2025–Present</span><span class="row-what">Consultant Urologist</span><span class="row-where">Parth Hospital, Ahmedabad</span></li>
+              <li class="row"><span class="row-when">2023–2025</span><span class="row-what">Resident Doctor</span><span class="row-where">Chettinad Hospital, Chennai</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3 class="group-title">Qualifications</h3>
+            <ul class="rows">
+              <li class="row"><span class="row-when">2026</span><span class="row-what">DrNB Urology</span><span class="row-where">NBE, Delhi</span></li>
+              <li class="row"><span class="row-when">2025</span><span class="row-what">MCh Urology</span><span class="row-where">Chettinad, Chennai</span></li>
+              <li class="row"><span class="row-when">2024</span><span class="row-what">MRCS</span><span class="row-where">Glasgow, UK</span></li>
+              <li class="row"><span class="row-when">2022</span><span class="row-what">MS General Surgery</span><span class="row-where">JNMC, Wardha</span></li>
+              <li class="row"><span class="row-when">2018</span><span class="row-what">MBBS</span><span class="row-where">BJ Medical College, Ahmedabad</span></li>
+            </ul>
+          </div>
+          <div class="group">
+            <h3 class="group-title">Also</h3>
+            <ul class="rows">
+              <li class="row row-note"><span class="row-when">Surgery</span><span class="row-text">2,000+ operative procedures performed independently</span></li>
+              <li class="row row-note"><span class="row-when">Research</span><span class="row-text">Horseshoe kidney pyeloplasty, urological malignancies, dutasteride in TURP outcomes</span></li>
+              <li class="row row-note"><span class="row-when">Languages</span><span class="row-text">English, Hindi, Gujarati, Marathi, Tamil</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-soft" id="contact">
+      <div class="wrap">
+        <div class="split">
+          <div>
+            <h2>Get in touch</h2>
+            <p class="contact-lead">For consultations and enquiries, call, write or send a WhatsApp message.</p>
+          </div>
+          <div class="contact-list">
+            <a class="contact-row" href="tel:+919558498020"><span class="label">Phone</span><span class="value">+91 95584 98020</span></a>
+            <a class="contact-row" href="mailto:shyamal.3637@gmail.com"><span class="label">Email</span><span class="value">shyamal.3637@gmail.com</span></a>
+            <a class="contact-row" target="_blank" rel="noopener noreferrer" href="https://wa.me/919558498020?text=Hi%2C%20I%20found%20your%20number%20on%20your%20website.%20I%20would%20like%20to%20get%20in%20touch."><span class="label">WhatsApp</span><span class="value">Send a message</span></a>
+            <div class="contact-row"><span class="label">Location</span><span class="value">Ahmedabad, Gujarat, India</span></div>
+          </div>
+        </div>
+        <footer class="footer">
+          <span>© <span id="year">2026</span> Dr. Shyamal Shah</span>
+          <a href="#top">Back to top</a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Hairline under the header appears once the page has scrolled
+    (function () {
+      var header = document.querySelector('.site-header');
+      function update() { header.classList.toggle('is-scrolled', window.scrollY > 8); }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+</body>
+</html>
